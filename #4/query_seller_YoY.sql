@@ -1,5 +1,3 @@
-#выводим id
-
 select
 	Seller_name,
 	sum_cur_year,
