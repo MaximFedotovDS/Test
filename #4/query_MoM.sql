@@ -14,7 +14,7 @@ from
 		date) = 2020
 		and extract(month
 	from
-		date) = 10
+		date) = 11
 		and buyer_id in (
 		select
 			member_id
@@ -37,7 +37,7 @@ join
 		date) = 2020
 		and extract(month
 	from
-		date) = 09
+		date) = 10
 		and buyer_id in (
 		select
 			member_id
