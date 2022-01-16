@@ -4,7 +4,7 @@ select
 	Seller_name,
 	sum_cur_year,
 	sum_prev_year,
-	sum_nov / sum_okt * 100 as MoM
+	sum_cur_year / sum_prev_year * 100 as YoY
 from
 	(
 	select
