@@ -33,4 +33,4 @@ limit 1;
 
 
 #Выведет:
-№ opera	4
+# opera	4
