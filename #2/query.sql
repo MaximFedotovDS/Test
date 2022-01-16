@@ -47,3 +47,5 @@ where
 		sum(gmv) desc
 	limit 1
 )
+
+#выведет opera
