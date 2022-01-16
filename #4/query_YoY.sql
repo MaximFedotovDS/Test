@@ -1,7 +1,7 @@
 #выводим id
 
 select
-	a.seller_id,
+	Seller_name,
 	sum_nov / sum_okt * 100 as MoM
 from
 	(
@@ -50,6 +50,8 @@ join
 	group by
 		seller_id) as b on
 	a.seller_id = b.seller_id
+join dim_seller ds on
+	ds.seller_id = a.seller_id
 order by
 	sum_nov / sum_okt * 100 desc
 limit 100;
