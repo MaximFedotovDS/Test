@@ -2,6 +2,8 @@
 
 select
 	Seller_name,
+	sum_nov,
+	sum_okt,
 	sum_nov / sum_okt * 100 as MoM
 from
 	(
