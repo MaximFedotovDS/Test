@@ -30,3 +30,7 @@ group by
 order by
 		count desc
 limit 1;
+
+
+#Выведет:
+№ opera	4
