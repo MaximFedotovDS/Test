@@ -2,14 +2,14 @@
 
 select
 	Seller_name,
-	sum_nov,
-	sum_okt,
+	sum_cur_year,
+	sum_prev_year,
 	sum_nov / sum_okt * 100 as MoM
 from
 	(
 	select
 		seller_id,
-		sum(gmv) as sum_nov
+		sum(gmv) as sum_cur_year
 	from
 		trade_di td
 	where
@@ -32,7 +32,7 @@ join
 (
 	select
 		seller_id,
-		sum(gmv) as sum_okt
+		sum(gmv) as sum_prev_year
 	from
 		trade_di td
 	where
@@ -55,5 +55,5 @@ join
 join dim_seller ds on
 	ds.seller_id = a.seller_id
 order by
-	sum_nov / sum_okt * 100 desc
+	sum_cur_year / sum_prev_year * 100 desc
 limit 100;
