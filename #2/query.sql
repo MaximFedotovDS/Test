@@ -1,6 +1,5 @@
 select
-	distinct channel,
-	member_id
+	distinct channel
 from
 	web_traffic_di wtd
 where
@@ -25,8 +24,7 @@ where
 )
 union all
 select
-	distinct channel,
-	member_id
+	distinct channel
 from
 	app_traffic_di atd
 where
