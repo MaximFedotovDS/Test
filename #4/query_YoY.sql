@@ -1,3 +1,5 @@
+#выводим id
+
 select
 	a.seller_id,
 	sum_nov / sum_okt * 100 as MoM
