@@ -1,5 +1,9 @@
+#выводим id
+
 select
-	a.seller_id,
+	Seller_name,
+	sum_nov,
+	sum_okt,
 	sum_nov / sum_okt * 100 as MoM
 from
 	(
@@ -34,10 +38,10 @@ join
 	where
 		extract(year
 	from
-		date) = 2020
+		date) = 2019
 		and extract(month
 	from
-		date) = 10
+		date) = 11
 		and buyer_id in (
 		select
 			member_id
@@ -48,6 +52,8 @@ join
 	group by
 		seller_id) as b on
 	a.seller_id = b.seller_id
+join dim_seller ds on
+	ds.seller_id = a.seller_id
 order by
 	sum_nov / sum_okt * 100 desc
 limit 100;
