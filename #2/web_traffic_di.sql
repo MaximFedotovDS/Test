@@ -4,7 +4,7 @@ Channel varchar(40),
 Date date
 );
 
-insert into app_traffic_di values
+insert into web_traffic_di values
 (7, 'chrome', '25-11-2020'),
 (8, 'chrome', '25-11-2020'),
 (9, 'edge', '25-11-2021'),
