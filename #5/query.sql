@@ -1,8 +1,8 @@
 select
 	year1,
 	month1,
-	count1,
-	count2
+	count_all,
+	count_ios
 from
 	(
 	select
@@ -12,21 +12,21 @@ from
 		extract(month
 	from
 		trade_di.date) as month1,
-		count(distinct buyer_id) as count1
+		count(distinct buyer_id) as count_all
 	from
 		trade_di
 	left join app_traffic_di on
 		trade_di.buyer_id = app_traffic_di.member_id
 	left join web_traffic_di on
 		trade_di.buyer_id = web_traffic_di.member_id
-	and trade_di.date > to_date('20-11-2020', 'dd-mm-yyyy')
-group by
-	extract(year
-from
-	trade_di.date),
-	extract(month
-from
-	trade_di.date)) as tbl1
+		and trade_di.date > to_date('20-11-2020', 'dd-mm-yyyy')
+	group by
+		extract(year
+	from
+		trade_di.date),
+		extract(month
+	from
+		trade_di.date)) as tbl1
 join
 (
 	select
@@ -36,7 +36,7 @@ join
 		extract(month
 	from
 		trade_di.date) as month2,
-		count(distinct buyer_id) as count2
+		count(distinct buyer_id) as count_ios
 	from
 		trade_di
 	left join app_traffic_di on
@@ -51,7 +51,7 @@ join
 			app_traffic_di
 		where
 			channel = 'ios')
-	and trade_di.date > to_date('20-11-2020', 'dd-mm-yyyy')
+		and trade_di.date > to_date('20-11-2020', 'dd-mm-yyyy')
 	group by
 		extract(year
 	from
