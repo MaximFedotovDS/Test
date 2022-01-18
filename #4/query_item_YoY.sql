@@ -53,5 +53,5 @@ join
 join dim_item as di on
 	di.Item_id = a.Item_id
 order by
-	sum_cur_year / sum_prev_year * 100 desc
+	sum_cur_year desc
 limit 100;
