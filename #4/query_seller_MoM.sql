@@ -55,5 +55,5 @@ join
 join dim_seller ds on
 	ds.seller_id = a.seller_id
 order by
-	sum_nov / sum_okt * 100 desc
+	sum_nov desc
 limit 100;
