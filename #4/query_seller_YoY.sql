@@ -53,5 +53,5 @@ join
 join dim_seller ds on
 	ds.seller_id = a.seller_id
 order by
-	sum_cur_year / sum_prev_year * 100 desc
+	sum_cur_year desc
 limit 100;
