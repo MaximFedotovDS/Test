@@ -53,5 +53,5 @@ join
 join dim_item as di on
 	di.Item_id = a.Item_id
 order by
-	sum_nov / okt * 100 desc
+	sum_nov desc
 limit 100;
